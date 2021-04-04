@@ -3,10 +3,12 @@ import App from './App';
 
 
 describe("<App />", ()=>{
-  test('renders learn react link', () => {
+  test('add input', () => {
     render(<App />);
-    const linkElement = screen.getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
+    const btnAdd = screen.getByTestId("btn-add");
+    fireEvent.click(btnAdd)
+    const container = screen.queryAllByTestId("container")
+    expect(container).toHaveLength(2)
   });
 })
 

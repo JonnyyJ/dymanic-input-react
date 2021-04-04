@@ -20,10 +20,11 @@ function App() {
   }
   return (
     <div className="App">
-      {
+       <div>
+       { 
         inputList.map((x, i)=>{
           return(
-            <div className="box">
+            <div className="box" data-testid="container">
               <input
                name = "firstName"
                value = {x.firstName}
@@ -39,12 +40,17 @@ function App() {
                 {inputList.length !== 1 && <button className="mr10"
                 onClick={ ()=> handleRemoveClick(i)}
                 >Remove</button>}
-                {inputList.length - 1 === i && <button onClick={handleAddClick}>Add</button>}
+                {inputList.length - 1 === i && 
+                <button 
+                data-testid="btn-add"
+                onClick={handleAddClick}>Add</button>}
               </div>
             </div>
           )
+          
         })
       }
+      </div>
       <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div>
     </div>
   );
