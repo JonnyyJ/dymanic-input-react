@@ -37,7 +37,9 @@ function App() {
                onChange={ e => handleInputChange(e, i)}
               />
               <div>
-                {inputList.length !== 1 && <button className="mr10"
+                {inputList.length !== 1 && <button
+                data-testid="btn-remove"
+                className="mr10"
                 onClick={ ()=> handleRemoveClick(i)}
                 >Remove</button>}
                 {inputList.length - 1 === i && 

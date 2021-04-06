@@ -10,5 +10,10 @@ describe("<App />", ()=>{
     const container = screen.queryAllByTestId("container")
     expect(container).toHaveLength(2)
   });
+  test('remove input', () => {
+    render(<App />);
+    const btnRemove = screen.getByTestId("btn-remove");
+    fireEvent.click(btnRemove)
+  });
 })
 
